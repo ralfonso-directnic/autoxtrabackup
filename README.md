@@ -17,10 +17,14 @@ This script has been tested on CentOS 6.4 with MariaDB-server-10.
 
 Installation
 ------------
-Copy autoxtrabackup.config to /etc/default/autoxtrabackup and edit the settings  
+Copy autoxtrabackup.config to /etc/backup/autoxtrabackup_$HOST and edit the settings 
 This is not mandatory, but recommended. You can also set the settings in the script directly.  
 Copy autoxtrabackup.sh to /usr/local/bin/autoxtrabackup  
 Make it executable, and set a cronjob  
+
+For the config you use the named $HOST by runnion autoxtrabackup foo which maps to the config for /etc/backup/autoxtrabackup_foo
+
+In this way you can create multiple backups 
 
 The script does not provide standard output. Check /tmp/backuplog  
 
