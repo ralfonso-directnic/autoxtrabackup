@@ -4,8 +4,18 @@
 # Copyright (c) 2014 Gregory Storme
 # Version: 0.2
 
-if [ -f /etc/default/autoxtrabackup ] ; then
-        . /etc/default/autoxtrabackup
+
+
+### look for a config file based off the host 
+
+if [ $# -eq 0 ]
+  then
+    echo "No host arguments supplied ie dbz1,dnic-db1 etc."
+fi
+
+
+if [ -f /etc/backup/autoxtrabackup_$1 ] ; then
+        . /etc/backup/autoxtrabackup_$1
 else
 
 backupDir=/var/backups/mysql
