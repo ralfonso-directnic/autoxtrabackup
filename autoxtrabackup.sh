@@ -28,6 +28,11 @@ sendEmail=never
 emailAddress=
 fi
 
+if [ ! -d "$backupDir/$1" ]; then
+        echo "Backup directory does not exist. Creating..."
+        mkdir -p $backupDir/$1
+fi
+
 #####
 # No editing should be required below this line
 #####
