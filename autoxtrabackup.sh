@@ -164,6 +164,11 @@ else
 fi
 
 # Delete backups older than retention date
+
+## 
+## streaming options which is what we need
+##innobackupex --user=root --password="Ihtdoju?" --compress --stream=xbstream /www/backup/ | ssh root@199.7.106.139 "xbstream -x -C /backup/central/"
+
 rm -rf $backupDir/$delDay*
 
 # Delete incremental backups with full backup base directory that was deleted
